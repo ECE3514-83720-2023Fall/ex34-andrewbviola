@@ -256,12 +256,12 @@ BinaryTree<TreeItemType, FunctionType> BinaryTree<TreeItemType, FunctionType>::m
       root = new NodeType(array[low]);
       return *this;
     } else {
-    int mid = low + (high - low)/2;
+    int midpoint = low + (high - low)/2;
     BinaryTree leftTree;
-    leftTree.makeBinaryTree(array,low,mid-1);
+    leftTree.makeBinaryTree(array,low,midpoint-1);
     BinaryTree rightTree;
-    rightTree.makeBinaryTree(array,mid+1,high);
-    root = new NodeType(array[mid]);
+    rightTree.makeBinaryTree(array,midpoint+1,high);
+    root = new NodeType(array[midpoint]);
     if (!leftTree.isEmpty()) {
       attachLeftSubtree(leftTree);
     }
